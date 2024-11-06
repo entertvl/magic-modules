@@ -190,3 +190,67 @@ properties:
     description: |
       Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the scheme must be one of "http" or "https", and the port must be supplied.
     required: false
+  - name: 'debugMask'
+    type: NestedObject
+    description: |
+      DebugMask for setting the masking and hiding data associated with the environment.
+    default_from_api: false
+    required: false
+    immutable: false
+    properties:
+      - name: 'namespaces'
+        type: Map
+        description: |
+          Map of namespaces to URIs.
+        required: true
+        immutable: false
+        key_name: 'key'
+        key_description: |
+          aaa
+        value_type:
+          name: 'value'
+          type: String
+          description: |
+            bbb
+      - name: 'requestXPaths'
+        type: Array
+        description: |
+          List of XPaths that specify the XML elements to be filtered from XML request message payloads.
+        required: true
+        immutable: false
+      - name: 'responseXPaths'
+        type: Array
+        description: |
+          List of XPaths that specify the XML elements to be filtered from XML response message payloads.
+        required: true
+        immutable: false
+      - name: 'faultXPaths'
+        type: Array
+        description: |
+          List of XPaths that specify the XML elements to be filtered from XML payloads in error flows.
+        required: true
+        immutable: false
+      - name: 'requestJSONPaths'
+        type: Array
+        description: |
+          List of JSON paths that specify the JSON elements to be filtered from JSON request message payloads.
+        required: true
+        immutable: false
+      - name: 'responseJSONPaths'
+        type: Array
+        description: |
+          List of JSON paths that specify the JSON elements to be filtered from JSON response message payloads.
+        required: true
+        immutable: false
+      - name: 'faultJSONPaths'
+        type: Array
+        description: |
+          List of JSON paths that specify the JSON elements to be filtered from JSON payloads in error flows.
+        required: true
+        immutable: false
+      - name: 'variables'
+        type: Array
+        description: |
+          List of variables that should be masked from the debug output.
+        required: true
+        immutable: false
