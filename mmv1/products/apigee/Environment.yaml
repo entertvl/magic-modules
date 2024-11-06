@@ -194,9 +194,9 @@ properties:
     type: NestedObject
     description: |
       DebugMask for setting the masking and hiding data associated with the environment.
-    default_from_api: false
-    required: false
     immutable: false
+    required: false
+    default_from_api: true
     properties:
       - name: 'namespaces'
         type: Map
